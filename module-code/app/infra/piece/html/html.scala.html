@@ -1,0 +1,9 @@
+@(piece: _root_.infra.piece.html.HtmlKind#P)
+
+<div class="da2-da5 t1-t3 m-padinfull">
+    @if(piece.title.isDefined) {
+        <h2>@piece.title.get</h2>
+    }
+
+    @Html(piece.content)
+</div>

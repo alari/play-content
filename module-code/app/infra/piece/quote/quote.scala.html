@@ -1,0 +1,32 @@
+@(piece: _root_.infra.piece.quote.QuotePiece)
+
+<blockquote class="db2-da5 t1-t3 m-padinfull">
+    @if(piece.processed.isDefined) {
+        @Html(piece.processed.get)
+    }
+    <small class="quote-signature">
+        @if(piece.title.isDefined) {
+            @piece.title.get
+            @if(piece.originalTitle.isDefined || piece.originalHref.isDefined) {
+                &ndash;
+            }
+        }
+        @if(piece.originalTitle.isDefined || piece.originalHref.isDefined) {
+            <em>
+                @if(piece.originalHref.isDefined) {
+                    <a href="@piece.originalHref.get">
+                        @if(piece.originalTitle.isDefined) {
+                            @piece.originalTitle.get
+                        }
+                        @if(!piece.originalTitle.isDefined) {
+                            @piece.originalHref.get
+                        }
+                    </a>
+                }
+                @if(!piece.originalHref.isDefined && piece.originalTitle.isDefined) {
+                    @piece.originalTitle.get
+                }
+            </em>
+        }
+    </small>
+</blockquote>

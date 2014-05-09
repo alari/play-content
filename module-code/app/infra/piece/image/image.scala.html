@@ -1,0 +1,13 @@
+@(piece: _root_.infra.piece.image.ImagePiece)
+
+@import _root_.play.api.Play.current
+@import _root_.infra.piece.core.Pieces.fileStorage
+
+<div class="da1-da5 t1-t3 m-all" style="text-align: center">
+    <figure style="max-width : 100% ; height : auto ; overflow-x : hidden ;">
+        <img src="@fileStorage.url(piece.sizes("large1200").fileId)" alt="@piece.filename" style="margin : auto ; max-width : 100%"/>
+        @if(piece.title.isDefined) {
+            <figcaption>@piece.title.get</figcaption>
+        }
+    </figure>
+</div>

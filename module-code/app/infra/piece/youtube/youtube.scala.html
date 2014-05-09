@@ -1,0 +1,10 @@
+@(piece: _root_.infra.piece.youtube.YoutubeKind#P)
+
+<div class="da1-da5 t1-t3 m-all piece-youtube">
+    @if(piece.title.isDefined){
+        <h5>@piece.title.get</h5>
+    }
+    <div class="embed-container">
+        <iframe src="//www.youtube.com/embed/@piece.code" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>

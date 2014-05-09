@@ -1,0 +1,11 @@
+@(piece: _root_.infra.piece.sound.SoundPiece)
+
+@import _root_.play.api.Play.current
+@import _root_.infra.piece.core.Pieces.fileStorage
+
+<div class="db2-db3 t2-t3 m-padinfull">
+    @if(piece.title.isDefined){
+        <h4>@piece.title.get</h4>
+    }
+    <audio src="@fileStorage.url(piece.fileId)" controls></audio>
+</div>

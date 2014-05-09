@@ -1,0 +1,10 @@
+@(piece: _root_.infra.piece.text.TextPiece)
+
+<div class="da2-da5 t1-t3 m-padinfull">
+    @if(piece.title.isDefined) {
+        <h2>@piece.title.get</h2>
+    }
+    @if(piece.processed.isDefined) {
+        @Html(piece.processed.get)
+    }
+</div>
